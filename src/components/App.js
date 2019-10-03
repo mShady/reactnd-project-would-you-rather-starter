@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { handleInitialData } from "../actions/shared";
+import LoadingBar from "react-redux-loading";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
   render() {
-    return <div>{this.props.needAuth ? "Authenticate!" : "Welcome!"}</div>;
+    return (
+      <div>
+        <LoadingBar />
+        {this.props.needAuth ? "Authenticate!" : "Welcome!"}
+      </div>
+    );
   }
 }
 
