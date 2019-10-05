@@ -16,15 +16,16 @@ class AuthedUser extends Component {
           ""
         ) : (
           <div>
-            <span>{`Hello ${authedUserDetails.name}! `}</span>
-            <img
-              src={authedUserDetails.avatarURL}
-              alt={`Avatar of ${authedUserDetails.name}`}
-              className="avatar"
-            />
-            <span>
+            <div>
+              <img
+                src={authedUserDetails.avatarURL}
+                alt={`Avatar of ${authedUserDetails.name}`}
+                className="avatar"
+              />
+
               <button onClick={this.handleSubmit}>Sign out</button>
-            </span>
+            </div>
+            {`Hello ${authedUserDetails.name}!`}
           </div>
         )}
       </div>
