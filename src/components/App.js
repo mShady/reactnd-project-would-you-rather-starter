@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading";
 import Login from "./Login";
-import AuthedUser from "./AuthedUser";
+import Home from "./Home";
 
 class App extends Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <LoadingBar />
-        {this.props.needAuth ? <Login /> : <AuthedUser />}
+        {this.props.needAuth ? <Login /> : <Home />}
       </div>
     );
   }
