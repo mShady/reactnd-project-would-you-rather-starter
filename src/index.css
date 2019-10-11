@@ -20,7 +20,7 @@ a {
   text-transform: uppercase;
   margin: 35px auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
+  border: 1px solid rgba(0, 0, 0, 0.29);
   cursor: pointer;
   background: #fff;
   font-size: 16px;
@@ -29,7 +29,7 @@ a {
 }
 
 .btn:hover {
-  border-color: rgba(0,0,0,.5);
+  border-color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
 
@@ -58,6 +58,10 @@ a {
   padding-left: 0;
 }
 
+.nav li:last-child {
+  padding-left: 200px;
+}
+
 ul {
   padding-left: 0;
 }
@@ -72,6 +76,12 @@ li {
   height: 50px;
   border-radius: 25px;
   margin: 10px;
+}
+
+.smallAvatar {
+  height: 30px;
+  border-radius: 15px;
+  margin: 0 10px;
 }
 
 .tweet {
@@ -159,5 +169,5 @@ li {
   text-align: right;
   margin-top: 10px;
   font-size: 20px;
-  color: #C3392A;
+  color: #c3392a;
 }

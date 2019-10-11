@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Header from "./Header";
 
 class Home extends Component {
   state = {
@@ -17,7 +16,6 @@ class Home extends Component {
     const { showAnsweredToggle } = this.state;
     return (
       <div>
-        <Header />
         {showAnsweredToggle ? "Answered Questions" : "Unanswered Questions"}
         <input
           type="checkbox"
