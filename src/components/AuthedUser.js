@@ -13,7 +13,7 @@ class AuthedUser extends Component {
     return authedUserDetails === null ? (
       ""
     ) : (
-      <div>
+      <Fragment>
         {`Hello ${authedUserDetails.name}!`}
         <img
           src={authedUserDetails.avatarURL}
@@ -21,7 +21,7 @@ class AuthedUser extends Component {
           className="smallAvatar"
         />
         <button onClick={this.handleSubmit}>Sign out</button>
-      </div>
+      </Fragment>
     );
   }
 }

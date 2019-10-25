@@ -5,7 +5,7 @@ body {
   color: #252525;
 }
 
-a {
+.headerLink {
   text-decoration: none;
   color: #252525;
 }
@@ -16,27 +16,41 @@ a {
   padding: 10px;
 }
 
-.btn {
+.questionsListContainer {
+  border: 1px solid #000;
+  width: fit-content;
+}
+
+.questionContainer {
+  border: 1px dashed #000;
+  padding: 10px;
+  margin: 5px;
+}
+
+.option {
+  border: 1px dashed #000;
+  /* width: fit-content; */
+  background: #ccc;
+  margin: 5px auto;
+}
+
+.tabHeader {
   text-transform: uppercase;
-  margin: 35px auto;
+  /* margin: 35px auto; */
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.29);
   cursor: pointer;
-  background: #fff;
+  background: #ccc;
   font-size: 16px;
-  width: 250px;
+  width: 50%;
   position: relative;
 }
 
-.btn:hover {
-  border-color: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-}
-
-.btn:focus {
-  outline: 0;
-  font-weight: 700;
-  border-width: 2px;
+.tabHeader:disabled {
+  font-weight: bolder;
+  text-decoration: underline;
+  background: #fff;
+  border-bottom-style: none;
 }
 
 .center {
@@ -52,6 +66,11 @@ a {
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #252525;
 }
 
 .nav li:first-child {

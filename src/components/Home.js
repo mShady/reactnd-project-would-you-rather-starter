@@ -1,27 +1,41 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import QuestionOverview from "./QuestionOverview";
 
 class Home extends Component {
   state = {
     showAnsweredToggle: false
   };
-  handleChange = e => {
-    const showAnsweredToggle = e.target.checked;
-
-    this.setState(() => ({
-      showAnsweredToggle
+  handleChange = () => {
+    this.setState(currentState => ({
+      showAnsweredToggle: !currentState.showAnsweredToggle
     }));
   };
   render() {
     const { showAnsweredToggle } = this.state;
+    const { answeredQuestions, unansweredQuestions } = this.props;
+    const questionsList = showAnsweredToggle
+      ? answeredQuestions
+      : unansweredQuestions;
     return (
-      <div>
-        {showAnsweredToggle ? "Answered Questions" : "Unanswered Questions"}
-        <input
-          type="checkbox"
-          onChange={this.handleChange}
-          checked={showAnsweredToggle}
-        />
+      <div className="questionsListContainer">
+        <button
+          className="tabHeader"
+          disabled={!showAnsweredToggle}
+          onClick={this.handleChange}
+        >
+          Answered Questions
+        </button>
+        <button
+          className="tabHeader"
+          disabled={showAnsweredToggle}
+          onClick={this.handleChange}
+        >
+          Unanswered Questions
+        </button>
+        {questionsList.map(id => {
+          return <QuestionOverview key={id} questionId={id}></QuestionOverview>;
+        })}
       </div>
     );
   }
