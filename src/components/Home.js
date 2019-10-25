@@ -24,14 +24,14 @@ class Home extends Component {
           disabled={!showAnsweredToggle}
           onClick={this.handleChange}
         >
-          Answered Questions
+          Unanswered Questions
         </button>
         <button
           className="tabHeader"
           disabled={showAnsweredToggle}
           onClick={this.handleChange}
         >
-          Unanswered Questions
+          Answered Questions
         </button>
         {questionsList.map(id => {
           return <QuestionOverview key={id} questionId={id}></QuestionOverview>;
