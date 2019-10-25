@@ -15,7 +15,7 @@ class Router extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route
-            path="/questions/:question_id"
+            path="/questions/:questionId"
             exact
             component={QuestionDetails}
           />
