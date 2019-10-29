@@ -4,7 +4,7 @@ class Vote extends Component {
   render() {
     const { text, forVotesCount, totalVotesCount, isYourVote } = this.props;
     return (
-      <div className="questionContainer">
+      <div className="itemContainer">
         {text}
         <div>
           {forVotesCount}/{totalVotesCount} votes

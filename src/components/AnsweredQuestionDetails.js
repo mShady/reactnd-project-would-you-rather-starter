@@ -15,22 +15,24 @@ class AnsweredQuestionDetails extends Component {
         <div>Asked by {questionAuthor.name}</div>
         <img
           src={questionAuthor.avatarURL}
-          alt={`Avatar of ${questionAuthor.avatarURL}`}
+          alt={`Avatar of ${questionAuthor.name}`}
           className="avatar"
         />
-        Results:
-        <Vote
-          text={question.optionOne.text}
-          forVotesCount={question.optionOne.votes.length}
-          totalVotesCount={totalVotesCount}
-          isYourVote={didAuthedUserVoteForOptionOne}
-        />
-        <Vote
-          text={question.optionTwo.text}
-          forVotesCount={question.optionTwo.votes.length}
-          totalVotesCount={totalVotesCount}
-          isYourVote={!didAuthedUserVoteForOptionOne}
-        />
+        <div>
+          Results:
+          <Vote
+            text={question.optionOne.text}
+            forVotesCount={question.optionOne.votes.length}
+            totalVotesCount={totalVotesCount}
+            isYourVote={didAuthedUserVoteForOptionOne}
+          />
+          <Vote
+            text={question.optionTwo.text}
+            forVotesCount={question.optionTwo.votes.length}
+            totalVotesCount={totalVotesCount}
+            isYourVote={!didAuthedUserVoteForOptionOne}
+          />
+        </div>
       </div>
     );
   }
