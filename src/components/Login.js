@@ -20,7 +20,7 @@ class Login extends Component {
   render() {
     const { selectedUser } = this.state;
     return (
-      <div>
+      <div className="center">
         {this.props.users.length > 0 ? (
           <form onSubmit={this.handleSubmit}>
             <select value={selectedUser} onChange={this.handleChange}>
