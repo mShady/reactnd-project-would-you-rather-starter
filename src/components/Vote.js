@@ -7,7 +7,8 @@ class Vote extends Component {
       <div className="itemContainer">
         {text}
         <div>
-          {forVotesCount}/{totalVotesCount} votes
+          {forVotesCount}/{totalVotesCount} votes (
+          {(forVotesCount / totalVotesCount) * 100}%)
         </div>
         {isYourVote ? "(Your Vote!)" : ""}
       </div>
