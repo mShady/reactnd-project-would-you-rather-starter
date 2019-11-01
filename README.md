@@ -4,8 +4,9 @@ This a personal project created to submit as part of my React Nano Degree with U
 
 ## Project Setup
 
-- clone the Project - `git@github.com:mShady/reactnd-project-would-you-rather-starter.git`
-- install the dependencies - `npm install`
+- Clone the Project - `git@github.com:mShady/reactnd-project-would-you-rather-starter.git`
+- Install the dependencies - `npm install`
+- Start the application - `npm start` (which start the application on http://localhost:3000/)
 
 ## Contributing
 
