@@ -11,10 +11,10 @@ class UnansweredQuestionDetails extends Component {
     this.setState({ selectedOption });
   };
   handleSubmit = e => {
-    const { questionId, authedUser } = this.props;
+    const { questionId } = this.props;
 
     this.props.dispatch(
-      handleAnswerQuestion(questionId, this.state.selectedOption, authedUser)
+      handleAnswerQuestion(questionId, this.state.selectedOption)
     );
   };
   render() {
@@ -55,9 +55,9 @@ class UnansweredQuestionDetails extends Component {
   }
 }
 
-function mapStateToProps({ users, questions, authedUser }, { questionId }) {
+function mapStateToProps({ users, questions }, { questionId }) {
   const question = questions[questionId];
   const questionAuthor = users[question.author];
-  return { question, questionAuthor, authedUser };
+  return { question, questionAuthor };
 }
 export default connect(mapStateToProps)(UnansweredQuestionDetails);

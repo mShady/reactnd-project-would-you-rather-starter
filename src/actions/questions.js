@@ -27,9 +27,9 @@ export function addQuestion(question) {
   };
 }
 
-export function handleAnswerQuestion(questionId, selectedOption, authedUser) {
-  return dispatch => {
-    dispatch(showLoading());
+export function handleAnswerQuestion(questionId, selectedOption) {
+  return (dispatch, getState) => {
+    const { authedUser } = getState();
     return saveAnswer(authedUser, questionId, selectedOption).then(() => {
       dispatch(answerQuestion(questionId, selectedOption, authedUser));
       dispatch(addUserAnswer(authedUser, questionId, selectedOption));
