@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleAnswerQuestion } from "../actions/questions";
+import { Redirect } from "react-router-dom";
 
 class UnansweredQuestionDetails extends Component {
   state = {
@@ -18,7 +19,11 @@ class UnansweredQuestionDetails extends Component {
     );
   };
   render() {
-    const { question, questionAuthor } = this.props;
+    const { notFound, question, questionAuthor } = this.props;
+
+    if (notFound === true) {
+      return <Redirect to="/NotFound" />;
+    }
 
     return (
       <div>
@@ -57,6 +62,8 @@ class UnansweredQuestionDetails extends Component {
 
 function mapStateToProps({ users, questions }, { questionId }) {
   const question = questions[questionId];
+  if (question === undefined) return { notFound: true };
+
   const questionAuthor = users[question.author];
   return { question, questionAuthor };
 }
