@@ -9,7 +9,6 @@ class AuthedUser extends Component {
   };
   render() {
     const { authedUserDetails } = this.props;
-    console.log("authedUserDetails:", authedUserDetails);
     return authedUserDetails === null ? (
       ""
     ) : (

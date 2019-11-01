@@ -11,7 +11,6 @@ class UnansweredQuestionDetails extends Component {
     this.setState({ selectedOption });
   };
   handleSubmit = e => {
-    console.log("handleSubmit");
     const { questionId, authedUser } = this.props;
 
     this.props.dispatch(
@@ -57,8 +56,6 @@ class UnansweredQuestionDetails extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }, { questionId }) {
-  console.log("questionId", questionId);
-  console.log("questions", questions);
   const question = questions[questionId];
   const questionAuthor = users[question.author];
   return { question, questionAuthor, authedUser };

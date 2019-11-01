@@ -4,7 +4,6 @@ import Vote from "./Vote";
 
 class AnsweredQuestionDetails extends Component {
   render() {
-    console.log("props:", this.props);
     const { question, questionAuthor, authedUserAnswer } = this.props;
     const totalVotesCount =
       question.optionOne.votes.length + question.optionTwo.votes.length;
